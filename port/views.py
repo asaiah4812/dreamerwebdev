@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from django.contrib import messages
 from .models import (
@@ -37,15 +37,29 @@ class IndexView(generic.TemplateView):
 
 
 
-class ContactView(generic.FormView):
-	template_name = "port/contact.html"
-	form_class = ContactForm
-	success_url = "/"
+# class ContactView(generic.FormView):
+# 	template_name = "port/contact.html"
+# 	form_class = ContactForm
+# 	success_url = "/"
 	
-	def form_valid(self, form):
-		form.save()
-		messages.success(self.request, 'Thank you. We will be in touch soon.')
-		return super().form_valid(form)
+# 	def form_valid(self, form):
+# 		form.save()
+# 		messages.success(self.request, 'Thank you. We will be in touch soon.')
+# 		return super().form_valid(form)
+	
+def contact(request):
+	if request.method == 'POST':
+		form = ContactForm(request.POST)
+		if form.is_valid():
+			form.save()
+			messages.success(request, 'Thank you. We will be in touch soon.🙏')
+			return redirect('port:contact')
+		else:
+			messages.warning(request, 'something went wrong')
+			return redirect('port:contact')
+	else:
+		form = ContactForm()
+		return render(request, 'port/contact.html', {'form':form})
 
 
 class PortfolioView(generic.ListView):
