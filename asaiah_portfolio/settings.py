@@ -48,7 +48,11 @@ INSTALLED_APPS = [
     'port.apps.PortConfig',
     # third part
     'django_ckeditor_5',
+    'cloudinary',
+    'cloudinary_storage'
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -142,7 +146,15 @@ STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 STATICFILE_DIRS = os.path.join(BASE_DIR/'static')
 STATIC_ROOT = os.path.join(BASE_DIR/'staticfiles')
-MEDIA_ROOT = BASE_DIR/'mediafiles'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dvii4ij1z',
+    'API_KEY': '653196732325355',
+    'API_SECRET': 'SsUO2l4CEBb68LfH3fBDJnSKp7c'
+}
+
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
