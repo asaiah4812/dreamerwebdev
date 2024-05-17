@@ -21,7 +21,8 @@
     <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{% block title %}{% endblock %}</title>
-</head>
+  {% include 'includes/css.html' %}
+  </head>
 <body class="dark:bg-gray-900 duration-200">
     <script>
  var msg_levels = { 20: 'info', 25: 'success', 30: 'warning', 40: 'error' };
