@@ -12,11 +12,13 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
-from environ import Env
+import os
 
-env = Env()
-Env.read_env()
-ENVIRONMENT = env('ENVIRONMENT', default='production')
+# from environ import Env
+
+# env = Env()
+# Env.read_env()
+# ENVIRONMENT = env('ENVIRONMENT', default='production')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9e@w$-@4qgb1^8)wg%#bgfp_=2a0iogh$0qz6t_**y4yazdj5w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
 
@@ -94,14 +96,13 @@ WSGI_APPLICATION = 'asaiah_portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'aws-0-us-east-1.pooler.supabase.com',
+        'HOST': 'aws-0-eu-central-1.pooler.supabase.com',
         'NAME': 'postgres',
-        'USER': 'postgres.dcxmzusjnwscthsaxcil',
-        'PASSWORD': 'dreamerwebdev2024',
+        'USER': 'postgres.kwcfwbepgpedzswqzhqg',
+        'PASSWORD': 'dreamer-portfolio2024',
         'PORT':'5432'
     } 
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -139,8 +140,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
-STATICFILE_DIRS = BASE_DIR/'static'
-STATIC_ROOT = BASE_DIR/'staticfiles'
+STATICFILE_DIRS = os.path.join(BASE_DIR/'static')
+STATIC_ROOT = os.path.join(BASE_DIR/'staticfiles')
 MEDIA_ROOT = BASE_DIR/'mediafiles'
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
