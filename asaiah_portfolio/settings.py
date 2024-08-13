@@ -97,17 +97,30 @@ WSGI_APPLICATION = 'asaiah_portfolio.wsgi.application'
 #         'NAME': BASE_DIR/'db.sqlite3',
 #     }
 # }
+#DEFAULT DATABASE
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'HOST': 'aws-0-eu-central-1.pooler.supabase.com',
+#         'NAME': 'postgres',
+#         'USER': 'postgres.kwcfwbepgpedzswqzhqg',
+#         'PASSWORD': 'dreamer-portfolio2024',
+#         'PORT':'5432'
+#     } 
+# }
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'aws-0-eu-central-1.pooler.supabase.com',
-        'NAME': 'postgres',
-        'USER': 'postgres.kwcfwbepgpedzswqzhqg',
-        'PASSWORD': 'dreamer-portfolio2024',
-        'PORT':'5432'
-    } 
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.environ["POSTGRES_DB"],
+        "USER": os.environ["POSTGRES_USER"],
+        "PASSWORD": os.environ["POSTGRES_PASSWORD"],
+        "HOST": os.environ["POSTGRES_HOST"],
+        "PORT": os.environ["POSTGRES_PORT"],
+    }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
