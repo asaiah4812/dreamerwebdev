@@ -13,12 +13,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 
 import os
-
-# from environ import Env
-
-# env = Env()
-# Env.read_env()
-# ENVIRONMENT = env('ENVIRONMENT', default='production')
+from dotenv import load_dotenv
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,8 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9e@w$-@4qgb1^8)wg%#bgfp_=2a0iogh$0qz6t_**y4yazdj5w'
-
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -96,11 +91,11 @@ WSGI_APPLICATION = 'asaiah_portfolio.wsgi.application'
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "defaultdb",
-        "USER": "avnadmin",
-        "PASSWORD": "AVNS_b6TIg-H0sQ3NCjNGTq2",
-        "HOST": "pg-1dc591f0-hensonasaiah21-9e30.i.aivencloud.com",
+        "ENGINE": str(os.getenv('ENGINE')),
+        "NAME":  str(os.getenv('NAME')),
+        "USER": str(os.getenv('USER')),
+        "PASSWORD": str(os.getenv('PASSWORD')),
+        "HOST": str(os.getenv('HOST')),
         "PORT": 18489,
     }
 }
@@ -148,9 +143,9 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dvii4ij1z',
-    'API_KEY': '653196732325355',
-    'API_SECRET': 'SsUO2l4CEBb68LfH3fBDJnSKp7c'
+    'CLOUD_NAME': str(os.getenv('CLOUD_NAME')),
+    'API_KEY': str(os.getenv('API_KEY')),
+    'API_SECRET': str(os.getenv('API_SECRET'))
 }
 
 
