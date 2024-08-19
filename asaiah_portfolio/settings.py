@@ -86,12 +86,6 @@ WSGI_APPLICATION = 'asaiah_portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# o
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 0fd9f4c9e494933a8da5eacd9e923009f56406a5
 
 DATABASES = {
     "default": {
