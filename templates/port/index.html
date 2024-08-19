@@ -36,7 +36,10 @@
                 <span class="text-left">{{t.name}}</span>
             </div>
            {% endfor %}
-    
+            <div class="flex gap-3">
+                <small class="text-lg font-bold">&#9897;</small>
+                <span class="text-left">Figma</span>
+            </div>    
         </div>
         <div class="space-y-5 w-full md:w-[500px] ">
              <h2 class="text-lg font-semibold">Coding Skills</h2>
@@ -46,7 +49,9 @@
                 <div class="bg-gradient-to-br from-purple-600 to-blue-500 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: {{sk.score}}%">  {{sk.score}}%</div>
             </div>
               {% endfor %}
-
+            <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
+                <div class="bg-gradient-to-br from-purple-600 to-blue-500 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full" style="width: 93%">  93%</div>
+            </div>
         </div>
 
     </div>
