@@ -99,16 +99,7 @@ WSGI_APPLICATION = 'asaiah_portfolio.wsgi.application'
 # }
 #DEFAULT DATABASE
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'HOST': 'aws-0-eu-central-1.pooler.supabase.com',
-#         'NAME': 'postgres',
-#         'USER': 'postgres.kwcfwbepgpedzswqzhqg',
-#         'PASSWORD': 'dreamer-portfolio2024',
-#         'PORT':'5432'
-#     } 
-# }
+
 
 DATABASES = {
     "default": {
