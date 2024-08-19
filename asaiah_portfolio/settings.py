@@ -88,6 +88,10 @@ WSGI_APPLICATION = 'asaiah_portfolio.wsgi.application'
 
 # o
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0fd9f4c9e494933a8da5eacd9e923009f56406a5
 
 DATABASES = {
     "default": {
