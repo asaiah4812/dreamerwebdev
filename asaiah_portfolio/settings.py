@@ -91,33 +91,17 @@ WSGI_APPLICATION = 'asaiah_portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default':{
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR/'db.sqlite3',
-#     }
-# }
-#DEFAULT DATABASE
+# o
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'HOST': 'aws-0-eu-central-1.pooler.supabase.com',
-#         'NAME': 'postgres',
-#         'USER': 'postgres.kwcfwbepgpedzswqzhqg',
-#         'PASSWORD': 'dreamer-portfolio2024',
-#         'PORT':'5432'
-#     } 
-# }
 
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ["POSTGRES_DB"],
-        "USER": os.environ["POSTGRES_USER"],
-        "PASSWORD": os.environ["POSTGRES_PASSWORD"],
-        "HOST": os.environ["POSTGRES_HOST"],
-        "PORT": os.environ["POSTGRES_PORT"],
+        "NAME": "defaultdb",
+        "USER": "avnadmin",
+        "PASSWORD": "AVNS_b6TIg-H0sQ3NCjNGTq2",
+        "HOST": "pg-1dc591f0-hensonasaiah21-9e30.i.aivencloud.com",
+        "PORT": 18489,
     }
 }
 
